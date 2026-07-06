@@ -1,0 +1,8 @@
+[package]
+name = "tran-the-hao-mips-visualized-rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Tran The Hao"]
+description = "Rust skeleton for visualizing MIPS JAL and RARS-style low-level control flow."
+
+[dependencies]
