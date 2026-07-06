@@ -38,7 +38,10 @@ fn main() {
     };
 
     println!("MIPS JAL visualizer");
-    println!("Initial state: pc = {:#010x}, ra = {:#010x}", cpu.pc, cpu.ra);
+    println!("System before JAL:");
+    println!("  caller context active");
+    println!("  pc = {:#010x} (points to jal)", cpu.pc);
+    println!("  ra = {:#010x} (not linked yet)", cpu.ra);
     println!("Instruction: jal {:#010x}", jal_target);
     println!("Step 1: save return address -> ra = pc + 4 = {:#010x}", cpu.pc + 4);
 

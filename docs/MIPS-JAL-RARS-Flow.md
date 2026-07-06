@@ -20,11 +20,25 @@ It performs two actions:
 This is the state the system has before the instruction executes:
 
 ```text
+CPU context:
 PC  -> points at jal function_label
 $ra -> still contains the previous return address, or 0 at startup
+
+Control context:
+The caller is active
+The callee has not started yet
+The return address has not been linked yet
 ```
 
 The CPU is still in the caller context. Nothing has jumped yet.
+
+```mermaid
+flowchart LR
+    A[Instruction memory\njal function_label] --> B[CPU fetches JAL]
+    B --> C[PC still points to JAL]
+    C --> D[$ra still unchanged]
+    D --> E[Caller context active]
+```
 
 ## Flow
 
