@@ -1,0 +1,29 @@
+{
+  "project": "Tran-The-Hao_MIPS-JAL-RARS-Full-Visual-System_v2_FIXED",
+  "charts": [
+    "Tran-The-Hao_System-Low-Level-Active-Architecture.png",
+    "Tran-The-Hao_MIPS-JAL-Nested-Execution-Trace-Chart.png",
+    "Tran-The-Hao_System-Low-Level-Active-Architecture.jpg",
+    "Tran-The-Hao_MIPS-JAL-Nested-Execution-Trace-Chart.jpg"
+  ],
+  "diagrams": [
+    "01-System-Low-Level-Active-Model.mmd",
+    "02-MIPS-JAL-Mechanism.mmd",
+    "03-Nested-JAL-Return-Address-Hazard.mmd",
+    "04-Execution-Trace-jal-nested-call.mmd",
+    "05-Business-System-Model.mmd"
+  ],
+  "examples": [
+    "jal_nested_call.asm"
+  ],
+  "entrypoints": [
+    "index.html",
+    "visualizer/full-system.html"
+  ],
+  "fixes": [
+    "Self-contained base64 PNG charts in HTML to avoid broken local asset paths",
+    "JSON-safe Mermaid injection to avoid JavaScript/template literal breakage",
+    "Mermaid source fallback shown even if CDN render fails",
+    "Clean file names for GitHub repository packaging"
+  ]
+}

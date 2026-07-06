@@ -1,0 +1,15 @@
+flowchart TD
+    Main["main: jal function_a"]
+    RA1["$ra = return_to_main"]
+    AStart["function_a starts"]
+    Save["save $ra into $t2"]
+    CallB["function_a: jal function_b"]
+    RA2["$ra overwritten = return_to_function_a"]
+    BRun["function_b executes"]
+    BReturn["jr $ra → back to function_a"]
+    Restore["restore $ra from $t2"]
+    AReturn["jr $ra → back to main"]
+    Exit["main exits"]
+
+    Main --> RA1 --> AStart --> Save --> CallB --> RA2 --> BRun --> BReturn --> Restore --> AReturn --> Exit
+    RA2 -. hazard .-> Warn["Hazard: nested jal overwrites $ra if caller does not save it"]

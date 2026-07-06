@@ -1,0 +1,9 @@
+flowchart TD
+    Start([Fetch jal label])
+    Decode[Decode opcode = JAL]
+    Link["$ra ← PC + 4"]
+    Jump["PC ← address(label)"]
+    Trace["Trace event: cycle, old PC, new PC, register write"]
+    Next[Fetch target instruction]
+
+    Start --> Decode --> Link --> Jump --> Trace --> Next

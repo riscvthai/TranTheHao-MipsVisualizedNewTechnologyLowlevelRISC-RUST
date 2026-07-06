@@ -1,0 +1,25 @@
+flowchart LR
+    A[ASM Source] --> B[Parser]
+    B --> C[Label Map]
+    C --> D[Instruction Memory]
+    D --> E[Fetch by PC]
+    E --> F[Decode Instruction]
+    F --> G[Control Signals]
+    G --> H[Execute State Transition]
+    H --> I[Register File]
+    H --> J[PC Update]
+    I --> K[Trace Event]
+    J --> K
+    K --> L[PNG/JPG Charts]
+    K --> M[Mermaid Diagrams]
+    K --> N[HTML Active Visualizer]
+    K --> O[Business Demo]
+
+    subgraph Low_Level_Core[Active Low-Level Core]
+        E
+        F
+        G
+        H
+        I
+        J
+    end
